@@ -1,0 +1,22 @@
+dist: xenial
+language: python
+sudo: required
+python:
+- '2.7'
+- '3.5'
+- '3.6'
+- '3.7'
+- pypy
+before_install:
+- pip install --upgrade pip
+install:
+- python setup.py install
+script:
+- sudo env "PATH=$PATH" python test/test.py
+deploy:
+  provider: pypi
+  user: tirsvad
+  on:
+    branch: master
+  password:
+    secure: mwn9YYLNRmb0tP1GKM7Nx+2Bs8Wm42mEjXfQaEDqyY1QPJnfxC/DShe1dpwVo/GyUwudCz2MS2gpEd0U0zAppYlly9PxeLSW10EzELbFQBbldKtd+BMp1XeZA22Geq6EoFzIu9pbjt+J4qVcPTokb3gxGHP3HFkQX9vSKANGM/uDTMbHTfq8iynmu3yDiMvC3MduliLZtFLiG8b/GNslEFcq+K9Fe+v0L+T8vIDY8+QcNhxSz0DwDV/L/gu6UMQ8kgLUbVBewX08BV7nHyvI2FGzYDkf8SFokdapTPm75glZGY8+Iosl6LjR27h+KdSbHsEprDOc0SlX1UDZtDbpbvcqvRUZNAPmXLt3SCyNYgZXX4zEQ6KUinGDwU3m34EZDePba5ZBDHWrBaALZtOQSICbBoBEZ/haDhgI7f1PT5F8+SPTJKjfzwsSeiA0vScDtJxwPSHa6b6g2LeNmo8s943XDY8ZTI5HtVglOjFs553H2bJ/YimeMtctcLv7YYSFkspndq03ogFeFe/bB5nY17yNUmOQfVwPq180i6/oyjK48zZKa0hOHKGqbvlGjBqo1bc0kHVd/RI/q94pdi3MFBn3hIV9T+tL20S5siv2BMz3bLU/pGRzUis2kt+ekaLGb0B+sg3kD+coPoYvjuB3Myy58qWe+/6d7rPZOb5gqCw=
