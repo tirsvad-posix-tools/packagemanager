@@ -10,7 +10,7 @@ with open(path.join(root_dir, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='tirsvadcms_packagemanager',
-    version='0.1.',
+    version='0.1.0b',
     long_description=long_description,
     long_description_content_type='text/markdown',
 
